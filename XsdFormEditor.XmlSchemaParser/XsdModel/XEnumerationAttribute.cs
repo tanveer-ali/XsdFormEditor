@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Xml;
 using System.Runtime.InteropServices;
 using System.Xml.Schema;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel.Enums;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel.Interfaces;
+using XmlSchemaParser.XsdModel.Enums;
+using XmlSchemaParser.XsdModel.Interfaces;
 
-namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
+namespace XmlSchemaParser.XsdModel
 {
     [Serializable]
     [Guid("2DDA17F1-E58D-475E-8140-E20F7F5D163C")]
@@ -57,6 +57,11 @@ namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
 
             return Value.ToString();
         }
+
+        /// <summary>
+        /// Prompt for the textbox/select
+        /// </summary>
+        public string Prompt { get; set; }
 
         /// <summary>
         /// Default value of an attribute.

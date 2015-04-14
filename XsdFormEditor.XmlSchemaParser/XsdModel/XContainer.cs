@@ -4,9 +4,9 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 using System.Runtime.InteropServices;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel.Interfaces;
+using XmlSchemaParser.XsdModel.Interfaces;
 
-namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
+namespace XmlSchemaParser.XsdModel
 {
     [Serializable]
     [Guid("AA0EA4EF-A399-4DBF-8FF9-06C00E4630BD")]
@@ -23,6 +23,11 @@ namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
         public string Name { get; set; }
 
         /// <summary>
+        /// Type Name of the container. This is used to check self reference types
+        /// </summary>
+        public string TypeName { get; set; }
+
+        /// <summary>
         /// Container attributes.
         /// </summary>
         public List<IXAttribute> Attributes { get; set; }
@@ -35,7 +40,7 @@ namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
         /// <summary>
         /// Container elements.
         /// </summary>
-        public List<XElement> Elements { get; set; }
+        public List<IXElement> Elements { get; set; }
 
         /// <summary>
         /// MinOccurs
@@ -61,7 +66,7 @@ namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
         {
             Containers = new List<XContainer>();
             Attributes = new List<IXAttribute>();
-            Elements = new List<XElement>();
+            Elements = new List<IXElement>();
         }
 
         /// <summary>

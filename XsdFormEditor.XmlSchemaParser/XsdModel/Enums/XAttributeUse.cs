@@ -1,6 +1,6 @@
 using System;
 
-namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel.Enums
+namespace XmlSchemaParser.XsdModel.Enums
 {
     /// <summary>
     /// Information about attribute usage.

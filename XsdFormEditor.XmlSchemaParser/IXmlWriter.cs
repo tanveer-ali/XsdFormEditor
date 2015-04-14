@@ -1,8 +1,8 @@
 using System.IO;
 using System.Runtime.InteropServices;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel;
+using XmlSchemaParser.XsdModel;
 
-namespace SemeionModulesDesigner.XmlSchemaParser
+namespace XmlSchemaParser
 {
     /// <summary>
     /// Xml writer interface used to write data to xml file.

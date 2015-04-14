@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Xml;
 using System.Runtime.InteropServices;
-using SemeionModulesDesigner.XmlSchemaParser.Helpers;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel.Interfaces;
+using XmlSchemaParser.Helpers;
+using XmlSchemaParser.XsdModel;
+using XmlSchemaParser.XsdModel.Interfaces;
 
-namespace SemeionModulesDesigner.XmlSchemaParser
+namespace XmlSchemaParser
 {
     /// <summary>
     /// Xml file parser.
@@ -90,10 +90,34 @@ namespace SemeionModulesDesigner.XmlSchemaParser
                     if (!(childElement is XmlComment))
                     {
                         var name = ((XmlElement)childElement).Name;
-                        if (containerElement.Name == name)
+                        var innerText = ((XmlElement)childElement).InnerText;
+                        if (!String.IsNullOrEmpty(innerText))
                         {
-                            containerElement.Value = ((XmlElement)childElement).InnerText;
+                            if (containerElement.Name == name)
+                            {
+                                if (containerElement is XElement<string>)
+                                {
+                                    ((XElement<string>)containerElement).Value = innerText;
+                                }
+                                else if (containerElement is XElement<int>)
+                                {
+                                    ((XElement<int>)containerElement).Value = int.Parse(innerText);
+                                }
+                                else if (containerElement is XElement<bool>)
+                                {
+                                    ((XElement<bool>)containerElement).Value = bool.Parse(innerText);
+                                }
+                                else if (containerElement is XElement<DateTime>)
+                                {
+                                    ((XElement<DateTime>)containerElement).Value = DateTime.Parse(innerText);
+                                }
+                                else if (containerElement is XElement<float>)
+                                {
+                                    ((XElement<float>)containerElement).Value = float.Parse(innerText);
+                                }
+                            }
                         }
+                        
                     }
                 }
             }

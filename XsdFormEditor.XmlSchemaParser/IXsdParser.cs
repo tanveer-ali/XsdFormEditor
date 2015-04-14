@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel;
+using XmlSchemaParser.XsdModel;
 
-namespace SemeionModulesDesigner.XmlSchemaParser
+namespace XmlSchemaParser
 {
     /// <summary>
     /// Used for Xsd file parsing.

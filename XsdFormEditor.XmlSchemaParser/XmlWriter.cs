@@ -1,8 +1,8 @@
 using System.IO;
 using System.Xml;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel;
+using XmlSchemaParser.XsdModel;
 
-namespace SemeionModulesDesigner.XmlSchemaParser
+namespace XmlSchemaParser
 {
     /// <summary>
     /// Xml writer used to write data to xml file.

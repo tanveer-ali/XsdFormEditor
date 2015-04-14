@@ -3,10 +3,10 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Xml;
 using System.Xml.Schema;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel.Enums;
-using SemeionModulesDesigner.XmlSchemaParser.XsdModel.Interfaces;
+using XmlSchemaParser.XsdModel.Enums;
+using XmlSchemaParser.XsdModel.Interfaces;
 
-namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
+namespace XmlSchemaParser.XsdModel
 {
     /// <summary>
     /// Encapsulate information about elements attribute.
@@ -44,6 +44,13 @@ namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel
 
             return Value.ToString();
         }
+
+
+        /// <summary>
+        /// Prompt for the textbox/select
+        /// </summary>
+        public string Prompt { get; set; }
+
 
         /// <summary>
         /// Default value of an attribute.

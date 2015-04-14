@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Xml.Serialization;
 
-namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel.Interfaces
+namespace XmlSchemaParser.XsdModel.Interfaces
 {
     [Guid("6E8C9AD4-B698-4E3F-B42D-6CF10BCFF796")]
     public interface IXContainer : IXmlSerializable
@@ -35,7 +35,7 @@ namespace SemeionModulesDesigner.XmlSchemaParser.XsdModel.Interfaces
         /// Container elements.
         /// </summary>
         [DispId(5)]
-        List<XElement> Elements { get; set; }
+        List<IXElement> Elements { get; set; }
 
         /// <summary>
         /// MinOccurs
